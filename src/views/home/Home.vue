@@ -103,9 +103,9 @@
 <!--    <img src="/static/images/demo3.png" class="demoImg"><br><br>-->
 
     <el-footer class="footbottom">
-      <p>Copyright © 2021 {{ domain }}. All rights reserved.</p>
+      <p>Copyright © 2023 {{ domain }}. All rights reserved.</p>
       <p>官方邮箱：<a :href=sendtoEmail>{{ email }}</a></p>
-      <p><a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2021021248号</a></p>
+      <p><a href="https://beian.miit.gov.cn/" target="_blank">浙工大20200572号</a></p>
     </el-footer>
   </div>
 </template>

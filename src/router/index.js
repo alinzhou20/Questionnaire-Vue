@@ -32,20 +32,6 @@ const routes = [
         }
     },
     {
-        path: '/unverified_email',
-        name: 'EmailVerify',
-        component: () => import('../views/user-sign/EmailVerify.vue'),
-        meta: {
-            requireAuth: true,
-            requireAuthNotConfirmed: true
-        }
-    },
-    {
-        path: '/confirm',
-        name: 'EmailConfirm',
-        component: () => import('../views/user-sign/EmailConfirm.vue'),
-    },
-    {
         path: '/index',
         name: 'QnCenter',
         component: () => import( '../views/qn-manage/QnCenter.vue'),
@@ -95,22 +81,6 @@ const routes = [
         }
     },
     {
-        path: '/fill_test',
-        name: 'FillTest',
-        component: () => import('../views/qn-fill/FillQnTest'),
-        meta: {
-            noNav: true
-        }
-    },
-    {
-        path: '/fill_hate',
-        name: 'FillPunch',
-        component: () => import('../views/qn-fill/FillQnPunch'),
-        meta: {
-            noNav: true
-        }
-    },
-    {
         path: '/fill_vote',
         name: 'FillVote',
         component: () => import('../views/qn-fill/FillQnVote'),
@@ -127,14 +97,6 @@ const routes = [
         }
     },
     {
-        path: '/preview_test',
-        name: 'PreviewTest',
-        component: () => import('../views/qn-fill/FillQnTest'),
-        meta: {
-            noNav: true
-        }
-    },
-    {
         path: '/preview_vote',
         name: 'PreviewVote',
         component: () => import('../views/qn-fill/FillQnVote'),
@@ -146,22 +108,6 @@ const routes = [
         path: '/preview',
         name: 'Preview',
         component: () => import('../views/qn-fill/FillQn'),
-        meta: {
-            noNav: true
-        }
-    },
-    {
-        path: '/preview_hate',
-        name: 'PreviewHate',
-        component: () => import('../views/qn-fill/FillQnPunch'),
-        meta: {
-            noNav: true
-        }
-    },
-    {
-        path: '/test_result',
-        name: 'TestResult',
-        component: () => import('../views/qn-fill/FinishTest'),
         meta: {
             noNav: true
         }
