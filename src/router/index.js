@@ -69,11 +69,6 @@ const routes = [
         component: () => import('../views/qn-create/qn-form/investigation'),
     },
     {
-        path: '/edit_test',
-        name: 'Test',
-        component: () => import('../views/qn-create/qn-form/test'),
-    },
-    {
         path: '/edit_form',
         name: 'SignUpForm',
         component: () => import('../views/qn-create/qn-form/form'),
@@ -82,11 +77,6 @@ const routes = [
         path: '/edit_vote',
         name: 'EditVote',
         component: () => import('../views/qn-create/qn-form/vote'),
-    },
-    {
-        path: '/edit_hate',
-        name: 'EditHate',
-        component: () => import('../views/qn-create/qn-form/punch'),
     },
     {
         path: '/fill',

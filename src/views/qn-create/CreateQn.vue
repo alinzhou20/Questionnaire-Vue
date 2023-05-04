@@ -15,18 +15,19 @@
           </el-card>
         </el-col>
         <el-col :span="6">
-          <el-card class="box-card"  @mouseover.native="isHoverTest=true" @mouseout.native="isHoverTest=false">
-            <img class="image" src="../../assets/images/test.png" alt="test_img">
-            <span><h3>考试</h3></span>
-            <div v-if="isHoverTest">
-              <el-button type="danger" @click="dialogVisible=true;;quesType=2">立即创建</el-button>
-            </div>
-            <div class="describe" v-else>
-              <el-row>题库抽题，限时作答</el-row>
-              <el-row>成绩查询，自动阅卷</el-row>
-            </div>
-          </el-card>
-        </el-col>
+        <el-card class="box-card" @mouseover.native="isHoverForm=true" @mouseout.native="isHoverForm=false">
+          <img class="image" src="../../assets/images/form.png" alt="form_img">
+          <span ><h3>表单</h3></span>
+          <div v-if="isHoverForm">
+            <el-button type="success" @click="dialogVisible=true;quesType=4">立即创建</el-button>
+          </div>
+          <div class="describe" v-else>
+            <el-row>信息登记，活动报名</el-row>
+            <el-row>Excel导入数据</el-row>
+          </div>
+        </el-card>
+      </el-col>
+      
         <el-col :span="6">
           <el-card class="box-card" @mouseover.native="isHoverVote=true" @mouseout.native="isHoverVote=false">
             <img class="image" src="../../assets/images/vote.png" alt="vote_img">
@@ -43,31 +44,18 @@
       </el-row>
     <el-row class="type-choose">
       <el-col :span="6" offset="6">
-        <el-card class="box-card" @mouseover.native="isHoverForm=true" @mouseout.native="isHoverForm=false">
-          <img class="image" src="../../assets/images/form.png" alt="form_img">
-          <span ><h3>表单</h3></span>
-          <div v-if="isHoverForm">
-            <el-button type="success" @click="dialogVisible=true;quesType=4">立即创建</el-button>
-          </div>
-          <div class="describe" v-else>
-            <el-row>信息登记，活动报名</el-row>
-            <el-row>Excel导入数据</el-row>
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card class="box-card" @mouseover.native="isHoverPunch=true" @mouseout.native="isHoverPunch=false">
-          <img class="image" src="../../assets/images/punch.png" alt="punch_img">
-          <span ><h3>打卡</h3></span>
-          <div v-if="isHoverPunch">
-            <el-button type="info" @click="dialogVisible=true;quesType=5">立即创建</el-button>
-          </div>
-          <div class="describe" v-else>
-            <el-row>日常打卡，疫情打卡</el-row>
-            <el-row>快速定位，信息上报</el-row>
-          </div>
-        </el-card>
-      </el-col>
+          <el-card class="box-card"  @mouseover.native="isHoverTest=true" @mouseout.native="isHoverTest=false">
+            <img class="image" src="../../assets/images/test.png" alt="test_img">
+            <span><h3>考试</h3></span>
+            <div v-if="isHoverTest">
+              <el-button type="danger" @click="dialogVisible_fail=true;;quesType=2">立即创建</el-button>
+            </div>
+            <div class="describe" v-else>
+              <el-row>题库抽题，限时作答</el-row>
+              <el-row>成绩查询，自动阅卷</el-row>
+            </div>
+          </el-card>
+      </el-col>  
       <el-col :span="6">
         <el-card class="box-card">
           <div><img class="image" src="../../assets/images/wen.png" alt="more_img"></div>
@@ -82,6 +70,13 @@
           <el-row class="bt-group">
             <el-button :span="6" @click="dialogVisible = false">取 消</el-button>
             <el-button :span="6" type="primary" @click="createConfirm">确 定</el-button>
+          </el-row>
+        </span>
+    </el-dialog>
+    <el-dialog title=正在完善 :visible.sync="dialogVisible_fail" width="30%" style="margin-top: 100px">
+        <span slot="footer" class="dialog-footer" style="text-align: center">
+          <el-row class="bt-group">
+            <el-button :span="6" @click="dialogVisible_fail = false">取 消</el-button>
           </el-row>
         </span>
     </el-dialog>
@@ -101,6 +96,7 @@ export default {
       isHoverVote: false,
       isHoverPunch: false,
       dialogVisible :false,
+      dialogVisible_fail :false,
       quesType: 1,
       surveyTitle: "",
     }
@@ -170,8 +166,12 @@ export default {
       })
     },
     createConfirm(){
+      if(this.quesType == 2){
+        this.dialogVisible=false;
+      }
+      else{
       this.dialogVisible=false;
-      this.createSurvey(this.quesType);
+      this.createSurvey(this.quesType);}
     },
   }
 }
