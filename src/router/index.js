@@ -60,11 +60,6 @@ const routes = [
         component: () => import('../views/qn-create/qn-form/form'),
     },
     {
-        path: '/edit_vote',
-        name: 'EditVote',
-        component: () => import('../views/qn-create/qn-form/vote'),
-    },
-    {
         path: '/fill',
         name: 'FillQn',
         component: () => import('../views/qn-fill/FillQn'),

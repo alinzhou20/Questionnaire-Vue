@@ -33,7 +33,7 @@
             <img class="image" src="../../assets/images/vote.png" alt="vote_img">
             <span ><h3>投票</h3></span>
             <div v-if="isHoverVote">
-              <el-button type="warning" @click="dialogVisible=true;quesType=3">立即创建</el-button>
+              <el-button type="warning" @click="dialogVisible_fail=true;quesType=3">立即创建</el-button>
             </div>
             <div class="describe" v-else>
               <el-row >图文视频，选项随机</el-row>
